@@ -1,0 +1,382 @@
+/* Importar fuentes web ideales para American Dad */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Black+Ops+One&family=Orbitron:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Anton', Arial, sans-serif;
+  margin: 0;
+  margin-bottom: 80px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+  color: #f1c40f;
+  margin: 0 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #f1c40f;
+  padding-bottom: 0.5rem;
+}
+
+#filtro {
+  text-align: center;
+  background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+}
+
+#filtro label {
+  font-weight: bold;
+  margin-right: 1rem;
+  color: #2c3e50;
+}
+
+#filtro select {
+  padding: 0.5rem 1rem;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#filtro select:hover {
+  border-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+#curiosidades {
+  text-align: center;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffeaa7 100%);
+  border: 3px solid #f1c40f;
+}
+
+#curioso-texto {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  border-left: 5px solid #f1c40f;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+#curioso-texto.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#btn-curioso {
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  color: #2c3e50;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+}
+
+#btn-curioso:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(241, 196, 15, 0.4);
+}
+
+#btn-curioso:active {
+  transform: translateY(-1px);
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #f1c40f;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.card p strong {
+  color: #f1c40f;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.momento-card {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.momento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #f1c40f;
+}
+
+.momento-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.momento-card:hover img {
+  transform: scale(1.05);
+}
+
+.momento-info {
+  padding: 1.5rem;
+}
+
+.momento-info h3 {
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #f1c40f;
+  padding-bottom: 0.5rem;
+}
+
+.momento-info p {
+  color: #555;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.momento-info p strong {
+  color: #f1c40f;
+}
+
+.galeria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 3px solid transparent;
+}
+
+.galeria img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-color: #f1c40f;
+}
+
+footer {
+  text-align: center;
+  background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+  color: #fff;
+  padding: 2rem 0;
+  border-top: 4px solid #f1c40f;
+  font-family: 'Bangers', 'Anton', Arial, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#hero {
+  background: linear-gradient(-45deg,
+      #667eea 0%,
+      #764ba2 25%,
+      #f093fb 50%,
+      #f5576c 75%,
+      #4facfe 100%);
+  background-size: 400% 400%;
+  animation: gradiente 12s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.1) 100%);
+  background-size: 400% 400%;
+  animation: gradiente 8s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes gradiente {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  75% {
+    background-position: 0% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .momento-card {
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "titulo": "Roger como Jeannie Gold",
+    "descripcion": "Roger adopta el excéntrico alter ego de Jeannie Gold para organizar la renovación de votos de Stan y Francine.",
+    "temporada": 5,
+    "episodio": 6,
+    "titulo_original": "Shallow Vows",
+    "image": "assets/momentos/ADShallowVows1.webp"
+  },
+  {
+    "id": 2,
+    "titulo": "Stan y Roger en el spa alienígena",
+    "descripcion": "Stan y Roger van a un spa intergaláctico que ofrece una experiencia fuera de lo común.",
+    "temporada": 6,
+    "episodio": 9,
+    "titulo_original": "Rapture's Delight",
+    "nota": "Algunas fuentes (Wikia) lo ubican como temporada 5, episodio 9.",
+    "image": "assets/momentos/RapturesDelight.webp"
+  },
+  {
+    "id": 3,
+    "titulo": "El karaoke de Stan y Francine",
+    "descripcion": "Stan y Francine intentan revivir la pasión matrimonial con una batalla de karaoke.",
+    "temporada": 4,
+    "episodio": 7,
+    "titulo_original": "Surro-Gate",
+    "image": "assets/momentos/Surro-Gate.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Roger como Ricky Spanish",
+    "descripcion": "Roger revive su odiado alter ego Ricky Spanish, sembrando terror familiar.",
+    "temporada": 7,
+    "episodio": 17,
+    "titulo_original": "Ricky Spanish",
+    "image": "assets/momentos/Roger-being-a-jerk-in-the-ER-from-American-Dad.jpeg"
+  },
+  {
+    "id": 5,
+    "titulo": "La venganza de Klaus",
+    "descripcion": "Klaus, ignorado por todos, diseña una divertida y digna venganza contra la familia.",
+    "temporada": 3,
+    "episodio": 11,
+    "titulo_original": "Oedipal Panties",
+    "image": "assets/momentos/oedipal.webp"
+  }
+]

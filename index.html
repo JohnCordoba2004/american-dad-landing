@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>American Dad Fanpage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>American Dad</h1>
+    <nav>
+      <a href="#hero">Personajes</a>
+      <a href="#momentos">Momentos</a>
+      <a href="#curiosidades">Curiosidades</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="filtro">
+      <label for="filtroRol">Filtrar por rol:</label>
+      <select id="filtroRol">
+        <option value="todos">Todos</option>
+        <option value="Agente de la cia">Agente de la cia</option>
+        <option value="Ama de casa">Ama de casa</option>
+        <option value="Alienigena">Alienigena</option>
+      </select>
+    </section>
+
+    <section id="curiosidades">
+      <h2>Datos Curiosos</h2>
+      <p id="curioso-texto">Haz clic para descubrir algo nuevo</p>
+      <button id="btn-curioso">Mostar curiosidad</button>
+    </section>
+
+    <section id="hero">
+      <h2>Bienvenido a la familia Smith</h2>
+      <div class="grid" id="personajes-grid">
+        <!-- Van desde el js -->
+      </div>
+    </section>
+
+    <section id="momentos" class="reveal">
+      <h2>Momentos Iconicos</h2>
+      <div class="galeria">
+        <!-- Imagenes o clips -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 - Fanpage creada para practicar</p>
+  </footer>
+
+  <!-- script -->
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

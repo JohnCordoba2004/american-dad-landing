@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Stan Smith",
+    "rol": "Agente de la cia",
+    "descripcion": "Padre de familia y protagonista",
+    "imagen": "assets/Stan_Smith.png"
+  },
+  {
+    "nombre": "Francine Smith",
+    "rol": "Ama de casa",
+    "descripcion": "Esposa de Stan con un pasado salvaje",
+    "imagen": "assets/Francine.png"
+  },
+  {
+    "nombre": "Roger",
+    "rol": "Alienigena",
+    "descripcion": "Sarcástico, excéntrico y con mil disfraces",
+    "imagen": "assets/Roger_Smith.png"
+  }
+]
