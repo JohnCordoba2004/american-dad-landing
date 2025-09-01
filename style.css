@@ -1,6 +1,11 @@
 /* Importar fuentes web ideales para American Dad */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Black+Ops+One&family=Orbitron:wght@400;700&display=swap');
 
+:root {
+  --bg-color: #585353;
+  --text-color: #222;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +21,8 @@ body {
   background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   line-height: 1.6;
 }
+
+
 
 header {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -96,6 +103,13 @@ section h2 {
   transform: translateY(-2px);
 }
 
+.curiosidades {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem;
+  transform: translateY(-90px);
+}
+
 #curiosidades {
   text-align: center;
   background: linear-gradient(135deg, #fff5e6 0%, #ffeaa7 100%);
@@ -149,6 +163,7 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+
 .card {
   background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
   border-radius: 15px;
@@ -161,15 +176,16 @@ section h2 {
   border: 2px solid transparent;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: #f1c40f;
-}
 
 .card.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #f1c40f;
 }
 
 .card img {
@@ -191,7 +207,7 @@ section h2 {
 }
 
 .card p strong {
-  color: #f1c40f;
+  color: #3498db;
 }
 
 .galeria {
@@ -248,7 +264,7 @@ section h2 {
 }
 
 .momento-info p strong {
-  color: #f1c40f;
+  color: #3498db;
 }
 
 .galeria img {
@@ -296,54 +312,285 @@ footer {
 }
 
 #hero {
-  background: linear-gradient(-45deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #f5576c 75%,
-      #4facfe 100%);
   background-size: 400% 400%;
-  animation: gradiente 12s ease-in-out infinite;
   position: relative;
   overflow: hidden;
 }
 
-#hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* ===== Modo oscuro detallado ===== */
+body.dark {
+  background: #1a1a1a;
+}
+
+body.dark header {
+  background: linear-gradient(135deg, #111827 0%, #0b1220 100%);
+  color: #e6e6e6;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark nav a {
+  color: #f5d97d;
+}
+
+body.dark nav a:hover {
+  background: #f5d97d;
+  color: #0b1220;
+}
+
+body.dark main {
+  color: #e6e6e6;
+}
+
+body.dark section {
+  background: #1b2230;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.dark section h2 {
+  color: #e6e6e6;
+  border-bottom: 3px solid #f5d97d;
+}
+
+body.dark #filtro {
+  background: linear-gradient(135deg, #121826 0%, #0e1422 100%);
+}
+
+body.dark #filtro label {
+  color: #e6e6e6;
+}
+
+body.dark #filtro select {
+  background: #0f1625;
+  border: 2px solid #6cb1ff;
+  color: #e6e6e6;
+}
+
+body.dark #filtro select:hover {
+  border-color: #3a8fe8;
+}
+
+body.dark #curiosidades {
+  background: linear-gradient(135deg, #1b2230 0%, #121826 100%);
+  border: 3px solid #f5d97d;
+}
+
+body.dark #curioso-texto {
+  color: #e6e6e6;
+  background: #0f1625;
+  border-left: 5px solid #f5d97d;
+}
+
+body.dark #btn-curioso {
+  background: linear-gradient(135deg, #f5d97d 0%, #e5b74b 100%);
+  color: #0b1220;
+  box-shadow: 0 4px 16px rgba(245, 217, 125, 0.25);
+}
+
+body.dark #btn-curioso:hover {
+  box-shadow: 0 6px 22px rgba(245, 217, 125, 0.35);
+}
+
+body.dark .card {
+  background: linear-gradient(135deg, #1b2230 0%, #121826 100%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.dark .card h3 {
+  color: #eaeaea;
+}
+
+body.dark .card p {
+  color: #c7c7c7;
+}
+
+body.dark .card p strong {
+  color: #f5d97d;
+}
+
+body.dark .momento-card {
+  background: linear-gradient(135deg, #1b2230 0%, #121826 100%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.dark .momento-info h3 {
+  color: #eaeaea;
+  border-bottom: 2px solid #f5d97d;
+}
+
+body.dark .momento-info p {
+  color: #c7c7c7;
+}
+
+body.dark .galeria img {
+  border-color: #2a364a;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.dark footer {
+  background: linear-gradient(90deg, #0b1220 0%, #111827 100%);
+  color: #e6e6e6;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark #hero {
   background: linear-gradient(-45deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0.05) 50%,
-      rgba(255, 255, 255, 0.1) 100%);
-  background-size: 400% 400%;
-  animation: gradiente 8s ease-in-out infinite reverse;
+      #0b1220 0%,
+      #111827 25%,
+      #1b2230 50%,
+      #0e1422 75%,
+      #0f1625 100%);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  background: #304457;
+  padding: 1.2rem 2rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.9);
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search {
+  padding: 0.9rem 1.2rem;
+  max-width: 320px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+  transition: box-shadow 0.2s ease;
+}
+
+#search:focus {
+  outline: 2px solid #f1c40f;
+  box-shadow: 0 0 0 3px #f1c40f44;
+}
+
+#controlSearch {
+  height: 44px;
+  width: 44px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #2c3e50;
+  color: #f1c40f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+#controlSearch:hover,
+#controlSearch:focus {
+  background: #f1c40f;
+  color: #2c3e50;
+  outline: none;
+  box-shadow: 0 0 0 3px #f1c40f44;
+}
+
+.fa-search {
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 0;
   pointer-events: none;
 }
 
-@keyframes gradiente {
-  0% {
-    background-position: 0% 50%;
-  }
 
-  25% {
-    background-position: 100% 50%;
-  }
+#modoOscuro {
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f1c40f;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.3s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+  position: relative;
+  overflow: hidden;
+}
 
-  50% {
-    background-position: 100% 100%;
-  }
+#modoOscuro::after {
+  content: '🌑';
+  font-size: 1.5rem;
+  display: block;
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  pointer-events: none;
+}
 
-  75% {
-    background-position: 0% 100%;
-  }
+body.dark #modoOscuro {
+  background: #222b3a;
+  color: #f1c40f;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
 
-  100% {
-    background-position: 0% 50%;
-  }
+body.dark #modoOscuro::after {
+  content: '☀️';
+  color: #f1c40f;
+  font-size: 1.5rem;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(360deg);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#modoOscuro:active {
+  transform: scale(0.95) rotateX(0deg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+#modoOscuro:focus {
+  outline: 2px solid #f1c40f;
+  outline-offset: 2px;
+}
+
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background-color: #f1c40f;
+  width: 0%;
+  z-index: 9999;
+  transition: width .2s ease;
+}
+
+.btnUp {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  cursor: 'https://icons8.com/icon/15532/usa';
+  cursor: pointer;
+}
+
+.estado-api {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform .5s ease;
+}
+
+.estado-api.visible {
+  opacity: 1;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 /* Responsive design */
