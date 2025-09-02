@@ -1,6 +1,10 @@
 // 🟢 Carga inicial de datos
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:3000/personajes")
+  const API_URL = window.location.hostname.includes("localhost")
+    ? "http://localhost:3000"
+    : "https://american-dad-landing.onrender.com/";
+
+  fetch(`${API_URL}/personajes`)
     .then((res) => {
       if (!res.ok) throw new Error("Error al cargar personajes");
       return res.json();
@@ -11,18 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("La respuesta no es un array:", personajes);
         return;
       }
-      window.personajesOriginales = personajes;
       renderPersonajes(personajes);
+      window.personajesOriginales = personajes;
     })
     .catch((err) => console.error("Error cargando datos: ", err));
 
-  fetch("http://localhost:3000/momentos")
+  fetch(`${API_URL}/momentos`)
     .then((res) => res.json())
     .then((momentos) => {
       renderMomentos(momentos);
     })
     .catch((error) => console.error("Error cargando datos: ", error));
-  fetch("http://localhost:3000/health")
+  fetch(`${API_URL}/health`)
     .then((res) => res.json())
     .then((data) => console.log("Estado del backend", data))
     .catch((err) => console.error("Error de concexion", err));
@@ -228,7 +232,10 @@ window.addEventListener("scroll", () => {
 
 async function verificarApi() {
   try {
-    const res = await fetch("http://localhost:3000/health");
+    const API_URL = window.location.hostname.includes("localhost")
+      ? "http://localhost:3000"
+      : "https://american-dad-landing.onrender.com";
+    const res = await fetch(`${API_URL}/health`);
     const data = await res.json();
 
     if (data.status === "ok") {
