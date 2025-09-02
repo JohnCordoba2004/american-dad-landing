@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const API_URL = window.location.hostname.includes("localhost")
     ? "http://localhost:3000"
-    : "https://american-dad-landing.onrender.com/";
+    : "https://american-dad-landing.onrender.com";
 
   fetch(`${API_URL}/personajes`)
     .then((res) => {
