@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       renderPersonajes(personajes);
       window.personajesOriginales = personajes;
+      window.statsPersonajes = generarStats;
     })
     .catch((err) => console.error("Error cargando datos: ", err));
 
@@ -253,3 +254,62 @@ function mostrarEstado(mensaje) {
   estado.textContent = mensaje;
   estado.classList.add("visible");
 }
+
+//stats
+function generarStats(personajes) {
+  const stats = {
+    porRol: {},
+    favoritos: 0,
+    porTemporada: {},
+  };
+
+  const favoritos = JSON.parse(localStorage.getItem("favoritos") || []);
+
+  personajes.forEach((p) => {
+    stats.porRol[p.rol] = (stats.porRol[p.rol] || 0) + 1;
+    if (favoritos.includes(p.nombre)) stats.favoritos++;
+    if (p.temporada) {
+      stats.porTemporada[p.temporada] =
+        (stats.porTemporada[p.temporada] || 0) + 1;
+    }
+  });
+  return stats;
+}
+
+function mostrarChartRoles() {
+  const stats = window.statsPersonajes;
+  const ctx = document.getElementById("chart-roles").getContext("2d");
+
+  new Chart(
+    (ctx = {
+      type: "bar",
+      data: {
+        labels: Object.keys(stats.poRol),
+        datasets: [
+          {
+            label: "Cantidad por rol",
+            data: Object.values(stats.porRol),
+            backgroundColor: "#3498db",
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Distribucion de roles",
+          },
+        },
+      },
+    })
+  );
+}
+
+document.getElementById("btn-stats").addEventListener("click", () => {
+  mostrarChartRoles();
+  document
+    .getElementById("stats-section")
+    .scrollIntoView({ behavior: "smooth" });
+});

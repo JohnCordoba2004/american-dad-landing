@@ -53,5 +53,150 @@
     "episodio": 12,
     "titulo_original": "Stan of Arabia: Part 1",
     "image": "assets/momentos/StanofArabia.jpeg"
+  },
+  {
+    "id": 7,
+    "titulo": "Roger como Joanne Cat",
+    "descripcion": "Roger aparece con otro de sus extravagantes alter egos y complica la vida de los Smith.",
+    "temporada": 2,
+    "episodio": 14,
+    "titulo_original": "Stannie Get Your Gun",
+    "image": "assets/Roger_Smith.png"
+  },
+  {
+    "id": 8,
+    "titulo": "Steve y su primera gran cita",
+    "descripcion": "Steve organiza una cita perfecta… hasta que Roger decide \"ayudar\".",
+    "temporada": 3,
+    "episodio": 8,
+    "titulo_original": "The 42-Year-Old Virgin",
+    "image": "assets/Stan_Smith.png"
+  },
+  {
+    "id": 9,
+    "titulo": "Francine estrella de la noche",
+    "descripcion": "Francine vuelve al centro de atención y descubre que aún la rompe en el escenario.",
+    "temporada": 4,
+    "episodio": 10,
+    "titulo_original": "Tearjerker",
+    "image": "assets/Francine.png"
+  },
+  {
+    "id": 10,
+    "titulo": "La misión imposible de Stan",
+    "descripcion": "Una operación de la CIA se desmadra cuando la familia se involucra sin querer.",
+    "temporada": 8,
+    "episodio": 3,
+    "titulo_original": "A Ward Show",
+    "image": "assets/Stan_Smith.png"
+  },
+  {
+    "id": 11,
+    "titulo": "Klaus por fin gana",
+    "descripcion": "Klaus consigue su anhelado momento de gloria… a un precio cuestionable.",
+    "temporada": 10,
+    "episodio": 6,
+    "titulo_original": "Kloger",
+    "image": "assets/momentos/oedipal.webp"
+  },
+  {
+    "id": 12,
+    "titulo": "Hayley y Jeff contra el mundo",
+    "descripcion": "La pareja enfrenta un caos épico y demuestra que juntos pueden con todo.",
+    "temporada": 12,
+    "episodio": 2,
+    "titulo_original": "A Boy Named Michael",
+    "image": "assets/momentos/Surro-Gate.jpg"
+  },
+  {
+    "id": 13,
+    "titulo": "Stan pierde la compostura",
+    "descripcion": "En los inicios, Stan lleva su patriotismo demasiado lejos y complica a la familia.",
+    "temporada": 1,
+    "episodio": 5,
+    "titulo_original": "Con Heir",
+    "image": "assets/Stan_Smith.png"
+  },
+  {
+    "id": 14,
+    "titulo": "Roger y un plan descabellado",
+    "descripcion": "Roger idea un plan para brillar que, obvio, se sale de control.",
+    "temporada": 2,
+    "episodio": 7,
+    "titulo_original": "Dungeons and Wagons",
+    "image": "assets/Roger_Smith.png"
+  },
+  {
+    "id": 15,
+    "titulo": "Klaus da un giro inesperado",
+    "descripcion": "Klaus encuentra una oportunidad para demostrar que puede ser clave en la familia.",
+    "temporada": 3,
+    "episodio": 6,
+    "titulo_original": "Lincoln Lover",
+    "image": "assets/momentos/oedipal.webp"
+  },
+  {
+    "id": 16,
+    "titulo": "Francine al rescate",
+    "descripcion": "Francine toma la iniciativa y salva el día con estilo propio.",
+    "temporada": 4,
+    "episodio": 3,
+    "titulo_original": "Widowmaker",
+    "image": "assets/Francine.png"
+  },
+  {
+    "id": 17,
+    "titulo": "Renovación de votos 2.0",
+    "descripcion": "Otra celebración termina siendo un caos encantador, cortesía de Roger.",
+    "temporada": 5,
+    "episodio": 9,
+    "titulo_original": "Pulling Double Booty",
+    "image": "assets/momentos/ADShallowVows1.webp"
+  },
+  {
+    "id": 18,
+    "titulo": "Daddy Queerest",
+    "descripcion": "Stan intenta ser un padre más 'cool' y las cosas se salen de control.",
+    "temporada": 6,
+    "episodio": 2,
+    "titulo_original": "Daddy Queerest",
+    "image": "assets/momentos/Daddy Queerest.jpg"
+  },
+  {
+    "id": 19,
+    "titulo": "Ricky Spanish vuelve (¡oh no!)",
+    "descripcion": "La sombra de Ricky Spanish ronda de nuevo y todos entran en pánico.",
+    "temporada": 7,
+    "episodio": 12,
+    "titulo_original": "Ricky Spanish Returns",
+    "image": "assets/Roger_Smith.png"
+  },
+  {
+    "id": 20,
+    "titulo": "Stan y una misión desastrosa",
+    "descripcion": "Un operativo de la CIA termina en lección familiar inolvidable.",
+    "temporada": 8,
+    "episodio": 11,
+    "titulo_original": "Morning Mimosa",
+    "image": "assets/Stan_Smith.png"
+  },
+  {
+    "id": 21,
+    "titulo": "Intriga en la CIA",
+    "descripcion": "Un caso en la agencia revela secretos y obliga a Stan a elegir.",
+    "temporada": 10,
+    "episodio": 9,
+    "titulo_original": "Faking Bad",
+    "image": "assets/Stan_Smith.png"
+  },
+  {
+    "id": 22,
+    "titulo": "Hayley arma la revolución (otra vez)",
+    "descripcion": "Hayley lidera una causa que termina uniendo –y dividiendo– a la familia.",
+    "temporada": 12,
+    "episodio": 7,
+    "titulo_original": "Ninety North, Zero West",
+    "image": "assets/Francine.png"
   }
+
 ]

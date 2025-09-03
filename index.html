@@ -60,16 +60,19 @@
     <section id="curiosidades">
       <h2>Datos Curiosos</h2>
       <p id="curioso-texto">Haz clic para descubrir algo nuevo</p>
-      <button id="btn-curioso">Mostar curiosidad</button>
+      <button href="#" id="btn-curioso">Mostar curiosidad</button>
     </section>
   </div>
 
-  <button id="btn-stats"></button>
-  <div id="stats-rol"></div>
-
+  <div class="stats-section">
+    <section id="stats-section">
+      <h2>Estadisticas</h2>
+      <canvas id="chart-roles" width="400" height="200"></canvas>
+      <button id="btn-stats">Mostar</button>
+    </section>
+  </div>
 
   <div id="estado-api" class="estado-api">Verificando conexion...</div>
-
 
   <footer class="footer">
     <p>© 2025 - Fanpage creada para practicar</p>
@@ -78,6 +81,7 @@
 
   <!-- script -->
   <script src="https://kit.fontawesome.com/74de10ced3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="app.js"></script>
 </body>
 
