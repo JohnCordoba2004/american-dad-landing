@@ -390,6 +390,21 @@ body.dark #btn-curioso:hover {
   box-shadow: 0 6px 22px rgba(245, 217, 125, 0.35);
 }
 
+body.dark #stats-section {
+  background: linear-gradient(135deg, #1b2230 0%, #121826 100%);
+  border: 3px solid #f5d97d;
+}
+
+body.dark #btn-stats {
+  background: linear-gradient(135deg, #f5d97d 0%, #e5b74b 100%);
+  color: #0b1220;
+  box-shadow: 0 4px 16px rgba(245, 217, 125, 0.25);
+}
+
+body.dark #btn-stats:hover {
+  box-shadow: 0 6px 22px rgba(245, 217, 125, 0.35);
+}
+
 body.dark .card {
   background: linear-gradient(135deg, #1b2230 0%, #121826 100%);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
@@ -508,7 +523,10 @@ body.dark #hero {
 
 /* Respeta reduce motion: minimiza animaciones/transformaciones */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
