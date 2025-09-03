@@ -15,16 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("La respuesta no es un array:", personajes);
         return;
       }
+      //Generar stats y mostrar graficos
       renderPersonajes(personajes);
       window.personajesOriginales = personajes;
-      window.statsPersonajes = generarStats;
+
+      window.statsPersonajes = generarStats(personajes);
+      chartStatsPorRol();
     })
     .catch((err) => console.error("Error cargando datos: ", err));
 
   fetch(`${API_URL}/momentos`)
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error("Error al cargar los personajes");
+      return res.json();
+    })
     .then((momentos) => {
       renderMomentos(momentos);
+      const statsTemp = generarStatsTemporada(momentos);
+      window.statsTemp = statsTemp;
+      console.log("stats por temp: ", statsTemp);
+      chartStatsPorTemp();
     })
     .catch((error) => console.error("Error cargando datos: ", error));
   fetch(`${API_URL}/health`)
@@ -260,56 +270,145 @@ function generarStats(personajes) {
   const stats = {
     porRol: {},
     favoritos: 0,
-    porTemporada: {},
+    porTemp: {},
   };
 
-  const favoritos = JSON.parse(localStorage.getItem("favoritos") || []);
+  const favs = JSON.stringify(localStorage.getItem("favoritos")) || [];
 
   personajes.forEach((p) => {
     stats.porRol[p.rol] = (stats.porRol[p.rol] || 0) + 1;
-    if (favoritos.includes(p.nombre)) stats.favoritos++;
+    if (favs.includes(p.nombre)) stats.favoritos++;
     if (p.temporada) {
-      stats.porTemporada[p.temporada] =
-        (stats.porTemporada[p.temporada] || 0) + 1;
+      stats.porTemp[p.temporada] = (stats.porTemp[p.temporada] || 0) + 1;
     }
   });
   return stats;
 }
 
-function mostrarChartRoles() {
+function chartStatsPorRol() {
   const stats = window.statsPersonajes;
+
+  if (!stats || !stats.porRol) {
+    console.warn("Stats aun no estan disponibles");
+    return;
+  }
+
   const ctx = document.getElementById("chart-roles").getContext("2d");
 
-  new Chart(
-    (ctx = {
-      type: "bar",
-      data: {
-        labels: Object.keys(stats.poRol),
-        datasets: [
-          {
-            label: "Cantidad por rol",
-            data: Object.values(stats.porRol),
-            backgroundColor: "#3498db",
-          },
-        ],
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: Object.keys(stats.porRol),
+      datasets: [
+        {
+          label: "Cantidad por Rol",
+          data: Object.values(stats.porRol),
+          backgroundColor: [
+            "#f39c12",
+            "#3498db",
+            "#2ecc71",
+            "#9b59b6",
+            "#e74c3c",
+          ],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true },
+        title: {
+          display: true,
+          text: "Distribucion de Roles",
+        },
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: "Distribucion de roles",
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
+
+//Temps
+function generarStatsTemporada(momentos) {
+  const stats = {
+    porTemp: {},
+  };
+
+  if (!Array.isArray(momentos)) {
+    console.warn("Momentos no es un array:", momentos);
+    return stats;
+  }
+
+  momentos.forEach((m) => {
+    if (m.temporada) {
+      stats.porTemp[m.temporada] = (stats.porTemp[m.temporada] || 0) + 1;
+    }
+  });
+  return stats;
+}
+
+function chartStatsPorTemp() {
+  const stats = window.statsTemp;
+
+  if (!stats) {
+    console.warn("Stats de temporadas no disponibles");
+    return;
+  }
+
+  // const temps = Object.keys(stats).sort((a, b) => a - b);
+  // const cantidades = temps.map((temp) => stats[temp]);
+
+  const ctx = document.getElementById("chart-temp").getContext("2d");
+
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: Object.keys(stats.porTemp),
+      datasets: [
+        {
+          label: "Momentos por temporada",
+          data: Object.values(stats.porTemp),
+          borderColor: "#2980b9",
+          backgroundColor: "rgba(52, 152, 219, 0.2)",
+          tension: 0.3,
+          fill: true,
+          pointRadius: 5,
+          pointBackgroundColor: "#2980b9",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        tooltip: {
+          enabled: true,
+        },
+        datalabels: {
+          display: true,
+          color: "#000",
+          anchor: "end",
+          align: "top",
+        },
+        title: {
+          display: true,
+          text: "Distribucion de momentos por temporada",
+        },
+        animation: {
+          duration: 1000,
+          easing: "easeOutQuart",
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1,
           },
         },
       },
-    })
-  );
+    },
+  });
 }
-
-document.getElementById("btn-stats").addEventListener("click", () => {
-  mostrarChartRoles();
-  document
-    .getElementById("stats-section")
-    .scrollIntoView({ behavior: "smooth" });
-});

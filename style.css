@@ -4,6 +4,7 @@
 :root {
   --bg-color: #585353;
   --text-color: #222;
+  --container-max: 1200px;
 }
 
 * {
@@ -55,9 +56,9 @@ nav a:hover {
 }
 
 main {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 }
 
 section {
@@ -89,7 +90,7 @@ section h2 {
 }
 
 #filtro select {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.1rem;
   border: 2px solid #3498db;
   border-radius: 25px;
   font-size: 1rem;
@@ -106,8 +107,7 @@ section h2 {
 .curiosidades {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem;
-  transform: translateY(-90px);
+  padding: 3rem 2rem;
 }
 
 #curiosidades {
@@ -158,16 +158,16 @@ section h2 {
 
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 2.4rem;
   padding: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
 
 .card {
   background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
   border-radius: 15px;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -212,8 +212,8 @@ section h2 {
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.4rem;
   padding: 1rem;
 }
 
@@ -236,7 +236,7 @@ section h2 {
 
 .momento-card img {
   width: 100%;
-  height: 200px;
+  height: 240px;
   object-fit: cover;
   transition: all 0.3s ease;
 }
@@ -259,8 +259,8 @@ section h2 {
 
 .momento-info p {
   color: #555;
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
+  margin: 0.6rem 0;
+  font-size: 1rem;
 }
 
 .momento-info p strong {
@@ -500,6 +500,21 @@ body.dark #hero {
   box-shadow: 0 0 0 3px #f1c40f44;
 }
 
+/* Accesibilidad: foco visible global para elementos interactivos */
+:focus-visible {
+  outline: 2px solid #f1c40f;
+  outline-offset: 2px;
+}
+
+/* Respeta reduce motion: minimiza animaciones/transformaciones */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .fa-search {
   font-size: 1.3rem;
   padding: 0;
@@ -596,8 +611,7 @@ body.dark #modoOscuro::after {
 .stats-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem;
-  transform: translateY(-90px);
+  padding: 3rem 2rem;
 }
 
 #stats-section {
